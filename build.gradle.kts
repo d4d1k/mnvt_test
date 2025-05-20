@@ -44,9 +44,11 @@ dependencies {
     implementation("jakarta.validation:jakarta.validation-api")
     kapt("io.micronaut.validation:micronaut-validation-processor")
     implementation("io.micronaut.validation:micronaut-validation")
+    implementation("org.flywaydb:flyway-core:11.8.2")
     runtimeOnly("org.flywaydb:flyway-database-postgresql:11.8.2")
     annotationProcessor("io.micronaut.data:micronaut-data-processor")
-    implementation("io.micronaut.flyway:micronaut-flyway:7.5.0")
+    testImplementation("io.micronaut.flyway:micronaut-flyway:7.5.0")
+    implementation("io.micronaut.flyway:micronaut-flyway:7.7.0")
 }
 
 
@@ -88,5 +90,3 @@ micronaut {
 tasks.named<io.micronaut.gradle.docker.NativeImageDockerfile>("dockerfileNative") {
     jdkVersion = "21"
 }
-
-
